@@ -10,3 +10,18 @@ Coreboard
 </h1>
 
 Coreboard, The Python-Flask framework for building web board applications
+
+## Coreboard structure
+
+```
+application
+├── application
+│   ├── static
+│   │   ├── css
+│   │   └── js
+│   ├── templates
+│   ├── __init__.py
+│   ├── database.py
+│   └── views.py
+└── runserver.py
+```
