@@ -1,0 +1,21 @@
+<link href="./static/css/quill.snow.css" rel="stylesheet">
+<link href="./static/css/board.css" rel="stylesheet">
+<h1>Write Page</h1>
+<!-- <div id="editor" style="height:70%;"></div> -->
+<form method="post" id="write-form">
+  <h3 id="title"><span>Title : </span><input type="text"></h3><br>
+  <div id="editor"></div>
+  <textarea name="text" style="display:none" id="hiddenArea"></textarea>
+  <input type="submit" value="Post Article" id="submit"/>
+</form>
+
+<script src="./static/js/quill.js"></script>
+<script src="./static/js/jquery.min.js"></script>
+<script>
+  var quill = new Quill('#editor', {
+    theme: 'snow'
+  });
+  $("#write-form").on("submit",function(){
+    $("#hiddenArea").val($("#editor").html());
+  })
+</script>

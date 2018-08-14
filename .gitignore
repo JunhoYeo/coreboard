@@ -1,4 +1,5 @@
 .DS_Store
+DATABASE.db
 .vscode/
 
 # Byte-compiled / optimized / DLL files

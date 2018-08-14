@@ -25,3 +25,19 @@ application
 │   └── views.py
 └── runserver.py
 ```
+
+## Installation
+
+### macOS
+
+```
+git clone https://github.com/JunhoYeo/coreboard.git
+```
+
+Clone this repository with `git`.
+
+```
+$ pip3 install -r requirements.txt
+```
+
+Install dependencies in `requirements.txt`.
