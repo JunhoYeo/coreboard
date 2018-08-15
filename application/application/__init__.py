@@ -7,5 +7,6 @@ app.secret_key = os.urandom(24)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///DATABASE.db'
 db = SQLAlchemy(app)
 
-import application.views
+from application.views import auth
+from application.views import board
 import application.database
