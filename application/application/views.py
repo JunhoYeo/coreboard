@@ -38,6 +38,10 @@ def login():
 
 @app.route('/logout')
 def logout():
+    try:
+        if session['logged_in'] == False:
+            return redirect(url_for('home'))
+    except: pass
     # logged_in -> False
     del(session['username'])
     session['logged_in'] = False
