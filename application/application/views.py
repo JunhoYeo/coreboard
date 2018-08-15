@@ -30,6 +30,10 @@ def login():
         session['logged_in'] = True
         print('success')
         return redirect(url_for('home'))
+    try:
+        if session['logged_in'] == True:
+            return redirect(url_for('home'))
+    except: pass
     return render_template('login.html')
 
 @app.route('/logout')
@@ -48,12 +52,19 @@ def signup():
         email = request.form.get('email')
         
         # form -> DB
+
+        # Need to check duplicate
+
         newuser = User(username=username, email=email, password=password)
         db.session.add(newuser)
         db.session.commit()
-        print(User.query.all())
-        print([[user.username, user.password] for user in User.query.all()])
+        # print(User.query.all())
+        # print([[user.username, user.password] for user in User.query.all()])
         
         return redirect(url_for('login'))
-    print(User.query.all())
+    # print(User.query.all())
+    try:
+        if session['logged_in'] == True:
+            return redirect(url_for('home'))
+    except: pass
     return render_template('signup.html')
