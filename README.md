@@ -16,13 +16,30 @@ Coreboard, The Python-Flask framework for building web board applications
 ```
 application
 ├── application
-│   ├── static
-│   │   ├── css
-│   │   └── js
-│   ├── templates
 │   ├── __init__.py
 │   ├── database.py
-│   └── views.py
+│   ├── static
+│   │   ├── README.md
+│   │   ├── css
+│   │   │   ├── board.css
+│   │   │   ├── font-awesome.min.css
+│   │   │   └── quill.snow.css
+│   │   └── js
+│   │       ├── quill.js
+│   │       └── sha512.js
+│   ├── templates
+│   │   ├── board
+│   │   │   ├── article.html
+│   │   │   ├── view.html
+│   │   │   └── write.html
+│   │   ├── index.html
+│   │   ├── login.html
+│   │   ├── mainpage.html
+│   │   └── signup.html
+│   └── views
+│       ├── __init__.py
+│       ├── auth.py
+│       └── board.py
 └── runserver.py
 ```
 
