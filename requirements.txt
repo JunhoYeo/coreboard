@@ -1,3 +1,2 @@
 Flask==0.12.2
-SQLAlchemy==1.2.5
-wand==0.4.4
+Flask-SQLAlchemy==2.3.2

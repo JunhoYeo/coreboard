@@ -1,0 +1,16 @@
+<form action="/signup" method="POST">
+    <input type="text" class="login-field" placeholder="username"
+    name="id" style="font-size: 150%;"><br>
+    <input type="password" id="password" class="login-field" placeholder="password"
+    name="password" style="font-size: 150%;"><br>
+    <input type="email" class="login-field" placeholder="email"
+    name="email" style="font-size: 150%;"><br>
+    <input onclick="Submit()" type="submit" value="Log in" style="font-size: 150%;">
+</form>
+<script src="./static/js/sha512.js"></script>
+<script>
+function Submit(){
+    var passwordObject = document.getElementById('password');
+    passwordObject.value = sha512_224(passwordObject.value);
+}
+</script>
