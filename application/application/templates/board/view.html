@@ -1,0 +1,6 @@
+page : {{ page }}
+<ul>
+{% for post in posts.items %}
+    <a href="./article/{{ post.id }}"><li>{{ post.title }}</li></a>
+{% endfor %}
+</ul>
