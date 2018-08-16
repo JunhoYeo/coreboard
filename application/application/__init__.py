@@ -4,6 +4,7 @@ import os
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
+app.config['SESSION_COOKIE_SECURE'] = True # set HttpOnly in session
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///DATABASE.db'
 db = SQLAlchemy(app)
 

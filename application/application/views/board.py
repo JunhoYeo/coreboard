@@ -43,5 +43,9 @@ def view():
 
 @app.route('/article/<post_id>')
 def article(post_id):
+    try:
+        page = int(request.args.get('page'))
+        if page < 1: page = 1
+    except: page = 1
     post = Post.query.filter_by(id=post_id).first()
-    return render_template('board/article.html', post=post)
+    return render_template('board/article.html', post=post, request_page=page)

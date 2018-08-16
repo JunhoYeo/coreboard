@@ -1,4 +1,13 @@
-<h1>{{ post.title }}</h1>
+<style>
+#title {
+    font-size: 350%;
+}
+</style>
+<h1 id="title">{{ post.title }}</h1>
 <div class="article">
     {{ post.article|safe }}
 </div>
+
+<a href="{{ url_for('home') }}">Main</a>
+
+<a href="{{ url_for('view', page=request_page) }}">Return</a>

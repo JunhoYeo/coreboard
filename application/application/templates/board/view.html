@@ -1,6 +1,16 @@
 page : {{ page }}
 <ul>
 {% for post in posts.items %}
-    <a href="./article/{{ post.id }}"><li>{{ post.title }}</li></a>
+    <a href="{{ url_for('article', post_id=post.id, page=page) }}"><li>{{ post.title }}</li></a>
 {% endfor %}
 </ul>
+
+<a href="{{ url_for('home') }}">Main</a>
+
+{% if posts.has_prev %}
+<a href="{{ url_for('view', page=posts.prev_num) }}">Prev</a>
+{% endif %}
+
+{% if posts.has_next %}
+<a href="{{ url_for('view', page=posts.next_num) }}">Next</a>
+{% endif %}
